@@ -1,0 +1,54 @@
+.Intro {
+  width: 100%;
+  height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2a2a;
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: max-content;
+
+    .Intro-text {
+      padding: 15px 0;
+      font-size: clamp(8px, 40vw, 19px);
+    }
+
+    .Intro-title {
+      font-size: clamp(26px, 50vw, 66px);
+      background: -webkit-linear-gradient(red, orange);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .Intro-button {
+      width: max-content;
+      height: 100%;
+      font-size: 20px;
+      padding: 8px 16px;
+      background-color: rgb(149, 0, 0);
+      -webkit-transition: .3s linear;
+      -moz-transition: .3s linear;
+      -ms-transition: .3s linear;
+      -o-transition: .3s linear;
+      transition: .3s linear;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      -ms-border-radius: 7px;
+      -o-border-radius: 7px;
+      border-radius: 7px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255,255,255,.4);
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.Header {
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  background-color: #2a2a2a;
+  color: #fff;
+
+  &__block {
+    position: fixed;
+    background-color: #2a2a2a;
+    z-index: 100;
+    width: 100%;
+    height: max-content;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(255,255,255,.4);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    svg {
+      cursor: pointer;
+    }
+
+    .Header-title {
+      font-size: clamp(10px, 4vw, 30px);
+    }
+
+    .Header-nav {
+      display: flex;
+      gap: 20px;
+
+      a {
+        font-size: clamp(7px, 40vw, 16.5px);
+        padding: 10px 5px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        border-radius: 10px;
+
+
+        &:hover {
+          background-color: rgba(255,255,255,.4);
+        }
+      }
+    }
+  }
+
+  &__inner--mobile {
+    display: none;
+    position: absolute;
+    left: 200%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #2a2a2a;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    a {
+      width: max-content;
+    }
+
+    .Mobile-menu-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    &.open-menu {
+      animation-name: to-left;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      display: flex;
+    }
+
+    @keyframes to-left {
+      0% {
+        left: 200%;
+      }
+      100% {
+        left: 0;
+      }
+    }
+
+    .Header-title {
+      font-size: clamp(20px, 40vw, 40px);
+    }
+
+    .Header-nav {
+      flex-direction: column;
+
+      a {
+        font-size: clamp(14px, 40vw, 25px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Header__inner--mobile {
+    display: none;
+  }
+  .Mobile-menu-open {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Header-nav.desktop {
+    display: none;
+  }
+}
