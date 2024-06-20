@@ -20,36 +20,15 @@
                 </div>
                 <button type="submit">Submit</button>
             </div>
-            <br /><br />
-            <!-- <div v-if="users.length == 0">
-                <h4>We've not users!</h4>
-                {{ phone }}
-            </div>
-            <div class="Form-user" v-for="(user, index) in users" :key="index">
-                <div class="Form-user--item">
-                    <h3>@{{ user.name }}</h3>
-                    <p>{{ user.email }} - {{ user.password }}</p>
-                    <span>{{ user.phone }}</span>
-                </div>
-            </div> -->
-            <div v-if="users.length === 0">
-                <h4>We have no users!</h4>
-            </div>
-            <div v-else class="Form-user" v-for="(user, index) in users" :key="index">
-                <div class="Form-user--item">
-                    <h3>@{{ user.name }}</h3>
-                    <p>{{ user.email }} - {{ user.password }}</p>
-                    <span>{{ user.phone }}</span>
-                </div>
-            </div>
         </div>
     </form>
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
+    name: 'Form',
     data() {
         return {
             name: '',
@@ -63,18 +42,18 @@ export default {
             passwordError: null,
         };
     },
-    created() {
-        this.fetchUsers();
-    },
+    // created() {
+    //     this.fetchUsers();
+    // },
     methods: {
-        async fetchUsers() {
-            try {
-                const response = await axios.get(`http://localhost:3000/users`);
-                this.users = response.data;
-            } catch (error) {
-                console.error('Error fetching users:', error);
-            }
-        },
+        // async fetchUsers() {
+        //     try {
+        //         const response = await axios.get(`http://localhost:3000/users`);
+        //         this.users = response.data;
+        //     } catch (error) {
+        //         console.error('Error fetching users:', error);
+        //     }
+        // },
         handleSubmitForm(e) {
             e.preventDefault();
             if (this.name === '') {

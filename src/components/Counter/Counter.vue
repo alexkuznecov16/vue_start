@@ -12,6 +12,7 @@
 
 <script>
 export default {
+    name: 'Counter',
     data() {
         return {
             number: 0,

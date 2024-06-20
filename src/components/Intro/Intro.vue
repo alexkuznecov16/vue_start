@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    name: 'Intro',
     data() {
         return {
             subtitle: 'Lorem, ipsum dolor.',

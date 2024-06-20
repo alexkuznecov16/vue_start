@@ -1,6 +1,6 @@
 <script setup>
-import menuIcon from './icons/IconMenu.vue';
-import crossIcon from './icons/IconCross.vue';
+import menuIcon from '../../assets/icons/IconMenu.vue';
+import crossIcon from '../../assets/icons/IconCross.vue';
 </script>
 
 <template>
@@ -32,6 +32,7 @@ import crossIcon from './icons/IconCross.vue';
 
 <script>
 export default {
+    name: 'Header',
     data() {
         return {
             isMobileMenuOpen: false,
@@ -44,7 +45,7 @@ export default {
         },
         close() {
             document.getElementsByClassName('Header__inner--mobile')[0].classList.remove('open-menu');
-            document.body.setAttribute('style', '')
+            document.body.setAttribute('style', '');
         },
     },
 };

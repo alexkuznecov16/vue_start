@@ -10,6 +10,7 @@
 
 <script>
 export default {
+    name: 'Footer',
     data() {
         return {
             title: 'Template',

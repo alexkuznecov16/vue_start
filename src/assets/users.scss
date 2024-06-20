@@ -1,0 +1,45 @@
+
+
+.Users {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .Users-item {
+      padding: 20px;
+      width: 26.666%;
+      height: 200px;
+      background-color: gainsboro;
+      -webkit-transition: .3s linear;
+      -moz-transition: .3s linear;
+      -ms-transition: .3s linear;
+      -o-transition: .3s linear;
+      transition: .3s linear;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      -ms-border-radius: 12px;
+      -o-border-radius: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      color: #2a2a2a;
+      &:hover {
+        box-shadow: 0px 0px 12px #bfb4b4;
+      }
+
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
