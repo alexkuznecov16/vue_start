@@ -44,7 +44,7 @@ export default {
         },
         close() {
             document.getElementsByClassName('Header__inner--mobile')[0].classList.remove('open-menu');
-            document.body.style.overflow = '';
+            document.body.setAttribute('style', '')
         },
     },
 };
