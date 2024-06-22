@@ -30,6 +30,12 @@ a {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1170px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
 button {
   cursor: pointer;
 }

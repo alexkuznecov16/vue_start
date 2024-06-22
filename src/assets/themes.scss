@@ -1,7 +1,12 @@
-.Counter {
+.ThemeChanger {
   width: 100%;
   padding: 50px 0;
+  background-color: #2a2a2a;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.active {
+    background-color: #fff;
+  }
 }

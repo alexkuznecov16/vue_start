@@ -51,7 +51,7 @@
 
   &__inner--mobile {
     display: none;
-    position: absolute;
+    position: fixed;
     left: 200%;
     top: 0;
     z-index: 10000000;

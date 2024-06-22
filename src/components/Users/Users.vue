@@ -1,13 +1,9 @@
 <template>
-    <div v-if="users.length === 0"></div>
+    <div v-if="users.length === 0">Loading...</div>
     <div class="Users" v-else>
         <div class="container">
             <div class="Users__inner">
-                <div class="Users-item" v-for="(user, index) in users" :key="index">
-                    <h3>@{{ user.name }}</h3>
-                    <p>{{ user.username }} - {{ user.email }}</p>
-                    <span>{{ user.phone }}</span>
-                </div>
+                <Request v-for="(user, index) in users" :key="index" :user="user" />
             </div>
         </div>
     </div>
@@ -15,9 +11,13 @@
 
 <script>
 import axios from 'axios';
+import Request from './Request.vue';
 
 export default {
     name: 'Users',
+    components: {
+        Request,
+    },
     data() {
         return {
             users: [],
@@ -29,7 +29,10 @@ export default {
     methods: {
         async fetchUsers() {
             try {
+                console.log('Fetching users...');
                 const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+                this.users = response.data;
+                console.log('Users fetched:', this.users);
                 this.users = response.data;
             } catch (error) {
                 console.error('Error fetching users: ', error);
