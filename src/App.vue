@@ -10,12 +10,12 @@ import Footer from './components/Footer/Footer.vue';
 </script>
 
 <template>
-    <Header />
-    <Intro />
-    <Counter />
-    <Form />
-    <Users />
-    <Themes />
-    <Calculator />
-    <Footer />
+  <Header />
+  <Intro />
+  <Counter />
+  <Form />
+  <Users />
+  <Themes />
+  <Calculator />
+  <Footer />
 </template>
