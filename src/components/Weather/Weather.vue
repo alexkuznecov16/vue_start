@@ -2,18 +2,18 @@
   <div class="Weather">
     <div class="container">
       <div class="Weather__inner">
-        <input v-model="place" type="text" placeholder="Place">
+        <input v-model="place" type="text" placeholder="Place" />
         <button type="button" @click="fetchWeather">Find</button>
         <div v-if="error">
           <p>Error</p>
         </div>
-        <div v-else-if='info.location && info.current'>
-          <p>{{ info.location.name }}</p>
-          <p>{{ info.location.country }}</p>
-          <p>{{ info.location.localtime }}</p>
-          <p>{{ info.current.temp_c }}C&deg;</p>
-          <p>{{ info.current.condition.text }}</p>
-          <img :src="info.current.condition.icon" alt="">
+        <div v-else-if="info.location && info.current">
+          <div class="Weather-item">
+            <p>{{ info.location.name }} ({{ info.location.country }})</p>
+            <p>{{ info.location.localtime }}</p>
+            <p>{{ info.current.temp_c }}C&deg;  - {{ info.current.condition.text }}</p>
+            <img :src="info.current.condition.icon" :alt="info.current.condition.text" />
+          </div>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ export default {
       place: '',
       info: {},
       error: false,
-    }
+    };
   },
   methods: {
     async fetchWeather() {
@@ -46,5 +46,5 @@ export default {
       }
     },
   },
-}
+};
 </script>

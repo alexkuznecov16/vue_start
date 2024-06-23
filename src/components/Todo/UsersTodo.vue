@@ -11,12 +11,12 @@ export default {
   props: {
     todoItems: {
       type: Array,
-      required: true
+      required: true,
     },
     deleteTodo: {
       type: Function,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>

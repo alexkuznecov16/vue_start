@@ -8,7 +8,7 @@
           <button type="button" @click="addTodo()">Add</button>
         </div>
         <div class="Todo-elements">
-          <UsersTodo :todoItems='todoItems' :deleteTodo='deleteTodo' />
+          <UsersTodo :todoItems="todoItems" :deleteTodo="deleteTodo" />
         </div>
       </div>
     </div>
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import UsersTodo from './UsersTodo.vue'
+import UsersTodo from './UsersTodo.vue';
 
 export default {
   name: 'Todo',
   components: {
-    UsersTodo
+    UsersTodo,
   },
   data() {
     return {
@@ -51,7 +51,7 @@ export default {
       if (todos) {
         this.todoItems = JSON.parse(todos); // parse (JSON)
       }
-    }
+    },
   },
   // Вызывается после того, как компонент был смонтирован
   mounted() {

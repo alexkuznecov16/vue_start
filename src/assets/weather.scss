@@ -1,0 +1,44 @@
+// <template>
+//   <div class="Weather">
+//     <div class="container">
+//       <div class="Weather__inner">
+//         <input v-model="place" type="text" placeholder="Place">
+//         <button type="button" @click="fetchWeather">Find</button>
+//         <div v-if="error">
+//           <p>Error</p>
+//         </div>
+//         <div v-else-if='info.location && info.current'>
+//           <p>{{ info.location.name }}</p>
+//           <p>{{ info.location.country }}</p>
+//           <p>{{ info.location.localtime }}</p>
+//           <p>{{ info.current.temp_c }}C&deg;</p>
+//           <p>{{ info.current.condition.text }}</p>
+//           <img :src="info.current.condition.ico" :alt="info.current.condition.text">
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </template>
+
+.Weather {
+  width: 100%;
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .Weather-item {
+      padding: 15px 18px;
+      background-color: antiquewhite;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
