@@ -44,20 +44,3 @@ export default {
   },
 };
 </script>
-
-<!-- function clearExpression() {
-  expression.value = '';
-}
-
-function addToExpression(value) {
-  expression.value += value;
-}
-
-function doResult() {
-  try {
-    expression.value = eval(expression.value);
-  } catch (error) {
-    console.error(error);
-    expression.value = error;
-  }
-} -->
