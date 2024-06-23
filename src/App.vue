@@ -7,6 +7,7 @@ import Users from './components/Users/Users.vue';
 import Themes from './components/Themes/Themes.vue';
 import Calculator from './components/Calculator/Calculator.vue';
 import Todo from './components/Todo/Todo.vue';
+import Weather from './components/Weather/Weather.vue';
 import Footer from './components/Footer/Footer.vue';
 </script>
 
@@ -19,5 +20,6 @@ import Footer from './components/Footer/Footer.vue';
   <Themes />
   <Calculator />
   <Todo />
+  <Weather />
   <Footer />
 </template>

@@ -8,10 +8,7 @@
           <button type="button" @click="addTodo()">Add</button>
         </div>
         <div class="Todo-elements">
-          <div class="Todo-item" v-for="(todo, index) in todoItems">
-            <p>{{ todo }}</p>
-            <button type="button" @click="deleteTodo(index)">Remove</button>
-          </div>
+          <UsersTodo :todoItems='todoItems' :deleteTodo='deleteTodo' />
         </div>
       </div>
     </div>
@@ -19,11 +16,16 @@
 </template>
 
 <script>
+import UsersTodo from './UsersTodo.vue'
+
 export default {
   name: 'Todo',
+  components: {
+    UsersTodo
+  },
   data() {
     return {
-      todoItems: ['First todo', 'Second todo'],
+      todoItems: [],
       newTodo: '',
     };
   },
@@ -34,11 +36,26 @@ export default {
       } else {
         this.todoItems.push(this.newTodo);
         this.newTodo = '';
+        this.saveTodos(); // save todo in localStorage
       }
     },
     deleteTodo(index) {
       this.todoItems.splice(index, 1);
+      this.saveTodos(); // save todo in localStorage
     },
+    saveTodos() {
+      localStorage.setItem('todoItems', JSON.stringify(this.todoItems)); // add item to localStorage
+    },
+    loadTodos() {
+      const todos = localStorage.getItem('todoItems'); // get todo items
+      if (todos) {
+        this.todoItems = JSON.parse(todos); // parse (JSON)
+      }
+    }
+  },
+  // Вызывается после того, как компонент был смонтирован
+  mounted() {
+    this.loadTodos();
   },
 };
 </script>
