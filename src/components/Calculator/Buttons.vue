@@ -29,16 +29,16 @@ export default defineComponent({
   props: {
     clearExpression: {
       type: Function,
-      required: true
+      required: true,
     },
     addToExpression: {
       type: Function,
-      required: true
+      required: true,
     },
     doResult: {
       type: Function,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>

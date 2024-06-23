@@ -4,7 +4,7 @@
       <div class="Calculator__inner">
         <div class="Calculator-resultArea" readonly name="result" id="resultArea">{{ expression }}</div>
         <div class="Calculator-buttons">
-          <Buttons :addToExpression='addToExpression' :clearExpression='clearExpression' :doResult='doResult' />
+          <Buttons :addToExpression="addToExpression" :clearExpression="clearExpression" :doResult="doResult" />
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@ let expression = ref('');
 export default {
   name: 'Calculator',
   components: {
-    Buttons
+    Buttons,
   },
   setup() {
     return {
@@ -40,8 +40,8 @@ export default {
         console.error(`Error: ${error}`);
         expression.value = 'Error';
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

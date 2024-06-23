@@ -1,0 +1,62 @@
+// <template>
+//   <div class="Todo">
+//     <div class="container">
+//       <div class="Todo__inner">
+//         <div class="Todo-add">
+//           <label for="add">Add todo:</label>
+//           <input minlength="5" type="text" id="add" name="add" placeholder="My todo." v-model="newTodo" />
+//           <button type="button" @click="addTodo()">Add</button>
+//         </div>
+//         <div class="Todo-elements">
+//           <div class="Todo-item" v-for="(todo, index) in todoItems">
+//             {{ todo }}
+//             <button type="button" @click="deleteTodo(index)">Remove</button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </template>
+
+.Todo {
+  width: 100%;
+  min-height: 600px;
+  padding: 70px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .Todo-add {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .Todo-elements {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      .Todo-item {
+        width: 250px;
+        height: auto;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        border: 1px solid;
+        padding: 12px 18px;
+
+        button {
+          background-color: red;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -4,13 +4,13 @@
       <div class="Todo__inner">
         <div class="Todo-add">
           <label for="add">Add todo:</label>
-          <input minlength='5' type="text" id='add' name='add' placeholder='My todo.' v-model='newTodo' />
-          <button type='button' @click='addTodo()'>Add</button>
+          <input minlength="5" type="text" id="add" name="add" placeholder="My todo." v-model="newTodo" />
+          <button type="button" @click="addTodo()">Add</button>
         </div>
         <div class="Todo-elements">
-          <div class="Todo-item" v-for='(todo, index) in todoItems'>
-            {{ todo }}
-            <button type="button" @click='deleteTodo(index)'>Remove</button>
+          <div class="Todo-item" v-for="(todo, index) in todoItems">
+            <p>{{ todo }}</p>
+            <button type="button" @click="deleteTodo(index)">Remove</button>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       todoItems: ['First todo', 'Second todo'],
-      newTodo: ''
+      newTodo: '',
     };
   },
   methods: {
@@ -38,7 +38,7 @@ export default {
     },
     deleteTodo(index) {
       this.todoItems.splice(index, 1);
-    }
-  }
+    },
+  },
 };
 </script>
